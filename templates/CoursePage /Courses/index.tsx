@@ -90,13 +90,13 @@ const Courses = ({}: ProductsProps) => {
                         <div className="table-cell align-middle pl-4 py-8 border-t border-grey-light md:grow md:pl-6 md:py-0 md:border-t-0 dark:border-grey-light/10">
                             <div className="flex items-center">
                                 <div className="relative shrink-0 w-24 mr-6 rounded-lg bg-[#A0D7E7] before:absolute before:z-1 before:top-full before:left-2 before:right-2 before:h-2 before:rounded-b-lg before:bg-[#E7FAFF] xl:w-18 xl:mr-4">
-                                    <Image
+                                    {/* <Image
                                         className="w-full"
                                         src={`${product?.image}`}
                                         width={96}
                                         height={72}
                                         alt=""
-                                    />
+                                    /> */}
                                 </div>
                                 <div className="grow">
                                     <div className="mb-2 text-title">

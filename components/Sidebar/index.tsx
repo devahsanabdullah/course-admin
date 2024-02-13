@@ -35,6 +35,11 @@ const Sidebar = ({ className, hideBanner, visible, onClick }: SidebarProps) => {
             url: "/products",
         },
         {
+            title: "Courses",
+            icon: "document",
+            url: "/courses",
+        },
+        {
             title: "Campaigns",
             icon: "chart",
             url: "/campaigns",

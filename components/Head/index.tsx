@@ -32,7 +32,7 @@ const Head = ({
             }`}
         >
             <div className="text-h5 md:text-[1rem]">
-                {info || "Hi Dash UI8,"}
+                {info }
             </div>
             <div className="text-h2 2xl:text-h3 md:-mt-1 md:text-h4">
                 {title}

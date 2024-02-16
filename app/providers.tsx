@@ -4,6 +4,7 @@ import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import {store} from '@/components/store/index'
 import { Provider } from "react-redux";
 import { QueryClient, QueryClientProvider } from 'react-query'
+import{ Auth} from '@/components/auth/Auth'
 const Providers = ({ children }: { children: React.ReactNode }) => {
     const queryClient = new QueryClient({
         defaultOptions: {
@@ -18,6 +19,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
       })
     return (
         <Provider store={store()}>
+          <Auth>
              <QueryClientProvider client={queryClient}>
             <CacheProvider>
                 <ColorModeScript
@@ -28,6 +30,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
                 <ChakraProvider>{children}</ChakraProvider>
             </CacheProvider>
             </QueryClientProvider>
+            </Auth>
         </Provider>
     );
 }

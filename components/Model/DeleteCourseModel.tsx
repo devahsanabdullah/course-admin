@@ -3,7 +3,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import { useAxios } from '@/components/services/http.service'
 import { useQueryClient } from 'react-query'
-import DeleteLoaderIcon from '@/components/icon/DeleteLoaderIcon'
+import DeleteLoaderIcon from '@/components/Icon/DeleteLoaderIcon'
 export default function DeleteCourseModel({ id }: any) {
   const [isDeleteOpen, setIsDeleteOpen] = useState(false)
   const [isLoader, setIsLoader] = useState(false)

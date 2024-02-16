@@ -6,7 +6,7 @@ import { useAxios } from '@/components/services/http.service'
 import { useMutation, useQueryClient } from 'react-query'
 import * as Yup from 'yup';
 // import { useAwsUploader } from '@/hook/useAwsUploader'
-import LoaderIcon from '@/components/icon/LoaderIcon'
+import LoaderIcon from '@/components/Icon/LoaderIcon'
 // import { useRouter } from 'next/router'
 const quizSchema = Yup.object().shape({
     question: Yup.string().required('Question is required'),

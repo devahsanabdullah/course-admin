@@ -6,7 +6,7 @@ import { useAxios } from '@/components/services/http.service'
 import { useMutation, useQueryClient } from 'react-query'
 import * as Yup from 'yup';
 // import { useAwsUploader } from '@/hook/useAwsUploader'
-import LoaderIcon from '@/components/icon/LoaderIcon'
+import LoaderIcon from '@/components/Icon/LoaderIcon'
 // import { useRouter } from 'next/router'
 const validationSchema = Yup.object().shape({
     title: Yup.string().required('Title is required'),
@@ -148,7 +148,11 @@ export default function UpdateVideoModel({id,item}:any) {
                         const posterImageBlob = await extractPosterFromVideo(
                           videoElement
                         )
-                        formData.append('file', values.file); 
+                        if(values.file)
+                        {
+                          formData.append('file', values.file); 
+                        }
+                      
                         // formData.append('image', posterImageBlob); 
                         formData.append('title', values.title);
                         formData.append('description', values.description);
@@ -161,7 +165,7 @@ export default function UpdateVideoModel({id,item}:any) {
                         formData.append('description', values.description);
                         mutation.mutate(formData)
                     }
-i
+
 
  
 

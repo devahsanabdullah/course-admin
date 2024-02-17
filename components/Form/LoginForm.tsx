@@ -1,11 +1,12 @@
 'use client'
-import React from 'react'
+import React,{useState} from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useAxios } from '@/components/services/http.service';
 import {useDispatch} from '@/components/store/index'
 import {setUserDetails} from '@/components/store/reducers/auth/authReducer'
 import { useRouter } from "next/navigation";
+import LoaderIcon from '@/components/Icon/LoaderIcon';
 const validationSchema = Yup.object({
 
   email: Yup.string()
@@ -26,6 +27,7 @@ const initialValues = {
    
   };
 const LoginForm = () => {
+  const [isLoading,setIsloading]=useState(false)
     const { post } = useAxios()
    const router = useRouter()
     const dispatch=useDispatch()
@@ -34,18 +36,22 @@ const LoginForm = () => {
     initialValues={initialValues}
     validationSchema={validationSchema}
     onSubmit={(values, {resetForm}) => {
+      setIsloading(true)
         post('/login', values)
         .then((response) => {
           const result:any = response.data
           dispatch(setUserDetails({token:result?.token,userData:result?.user}))
           console.log(result,"success")
+          
           router.push('/')
-          resetForm()
+          setIsloading(false)
+          // resetForm()
         })
         .catch((error) => {
             const errorMessage = error.response.data.message
            console.log(errorMessage,"error")
-           resetForm()
+           setIsloading(false)
+          //  resetForm()
         })
     }}
   >
@@ -72,9 +78,23 @@ const LoginForm = () => {
              </div>
            
              <div className="flex justify-center my-6">
-                 <button className=" rounded-full  p-3 w-full sm:w-56   bg-gradient-to-r from-sky-600  to-teal-300 text-white text-lg font-semibold " >
-                   Login
-                 </button>
+             
+                 {isLoading ? (
+                          <button
+                            disabled
+                            className="!bg-primary mt-7 rounded-lg text-priamry font-headingBold text-xl flex justify-center items-center h-12 w-full lg:w-1/2"
+                          >
+                            <LoaderIcon />
+                          </button>
+                        ) : (
+                          <button
+                            type="submit"
+                            className="!bg-primary mt-7 !text-white rounded-lg text-priamry font-headingBold text-xl flex justify-center items-center h-12 w-full lg:w-1/2"
+                          >
+                         Login
+                        
+                          </button>
+                        )}
              </div>
              {/* <div className="flex justify-center ">
                  <p className="text-gray-500">Already have an acount? </p>

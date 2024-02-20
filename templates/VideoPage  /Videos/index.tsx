@@ -16,8 +16,7 @@ import { useParams } from "next/navigation";
 type ProductsProps = {id:any};
 
 const Videos = ({id}: ProductsProps) => {
-    const [selectAll, setSelectAll] = useState<boolean>(false);
-    const [checkboxes, setCheckboxes] = useState(products);
+
     const [currentPage, setCurrentPage] = useState(1)
     const [searchText, setSearchText] = useState<any>('')
   const router =useRouter()

@@ -68,8 +68,8 @@ const Head = ({
                     }`}
                     onClick={onClick}
                 ></button>
-                <Search className="max-w-[13.375rem] -ml-2 md:hidden" />
-                <Notifications className="shrink-0 ml-4 md:ml-auto" />
+                {/* <Search className="max-w-[13.375rem] -ml-2 md:hidden" /> */}
+                {/* <Notifications className="shrink-0 ml-4 md:ml-auto" /> */}
                 <button className="hidden ml-10 md:block">
                     <Image
                         className="w-10 h-10 rounded-full opacity-100"

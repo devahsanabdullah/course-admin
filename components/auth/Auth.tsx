@@ -19,8 +19,8 @@ export const Auth = ({ children }: { children: any }) => {
         <div className="w-fit">
           <img
             alt="logo1"
-            src="/v2-icons/tap.png"
-            className="h-full animate-pulse"
+            src={"/images/logo.png"}
+            className="h-[200px] animate-pulse"
           />
         </div>
       </div>

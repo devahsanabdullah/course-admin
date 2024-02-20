@@ -32,33 +32,33 @@ const Sidebar = ({ className, hideBanner, visible, onClick }: SidebarProps) => {
         {
             title: "Users",
             icon: "profile",
-            url: "/products",
+            url: "/users",
         },
         {
             title: "Courses",
             icon: "document",
             url: "/courses",
         },
-        {
-            title: "Campaigns",
-            icon: "chart",
-            url: "/campaigns",
-        },
+        // {
+        //     title: "Campaigns",
+        //     icon: "chart",
+        //     url: "/campaigns",
+        // },
         {
             title: "Schedules",
             icon: "compass",
             url: "/schedules",
         },
-        {
-            title: "Payouts",
-            icon: "wallet",
-            url: "/payouts",
-        },
-        {
-            title: "Statements",
-            icon: "document",
-            url: "/statements",
-        },
+        // {
+        //     title: "Payouts",
+        //     icon: "wallet",
+        //     url: "/payouts",
+        // },
+        // {
+        //     title: "Statements",
+        //     icon: "document",
+        //     url: "/statements",
+        // },
         {
             title: "Settings",
             icon: "settings",
@@ -67,24 +67,24 @@ const Sidebar = ({ className, hideBanner, visible, onClick }: SidebarProps) => {
     ];
 
     const insights = [
-        {
-            title: "Inbox",
-            icon: "mail",
-            url: "/inbox",
-            counter: 18,
-        },
-        {
-            title: "Notifications",
-            icon: "bell",
-            url: "/notifications",
-            counter: 2,
-        },
-        {
-            title: "Comments",
-            icon: "chat",
-            url: "/comments",
-            counter: 20,
-        },
+        // {
+        //     title: "Inbox",
+        //     icon: "mail",
+        //     url: "/inbox",
+        //     counter: 18,
+        // },
+        // {
+        //     title: "Notifications",
+        //     icon: "bell",
+        //     url: "/notifications",
+        //     counter: 2,
+        // },
+        // {
+        //     title: "Comments",
+        //     icon: "chat",
+        //     url: "/comments",
+        //     counter: 20,
+        // },
     ];
 
     return (
@@ -109,11 +109,7 @@ const Sidebar = ({ className, hideBanner, visible, onClick }: SidebarProps) => {
                     >
                         <Image
                             className="w-full opacity-100"
-                            src={
-                                isDarkMode
-                                    ? "/images/logo-light.png"
-                                    : "/images/logo-dark.png"
-                            }
+                            src={"/images/logo.png"}
                             width={176}
                             height={47}
                             alt=""
@@ -143,16 +139,7 @@ const Sidebar = ({ className, hideBanner, visible, onClick }: SidebarProps) => {
                     <Menu
                         className="mb-8"
                         title={
-                            <>
-                                Admin
-                                <span
-                                    className={
-                                        visible ? "xl:hidden lg:inline" : ""
-                                    }
-                                >
-                                    &nbsp; tools
-                                </span>
-                            </>
+                          ''
                         }
                         items={menuAdmin}
                         visible={visible}
@@ -162,14 +149,14 @@ const Sidebar = ({ className, hideBanner, visible, onClick }: SidebarProps) => {
                             visible ? "xl:-mx-5 lg:mx-5" : ""
                         }`}
                     ></div>
-                    <Menu
+                    {/* <Menu
                         className="mb-auto"
                         title="Insights"
                         items={insights}
                         visible={visible}
-                    />
-                    {!hideBanner && !visible && <Banner />}
-                    <Profile visible={visible} />
+                    /> */}
+                    {/* {!hideBanner && !visible && <Banner />}
+                    <Profile visible={visible} /> */}
                 </div>
                 <div
                     className={`absolute left-0 right-0 bottom-0 flex items-center h-18 px-10 border-t border-black/5 dark:border-[#000]/10 ${

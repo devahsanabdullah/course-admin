@@ -12,29 +12,49 @@ const data = [
     {
         name: "Oct",
         uv: 20,
-        pv: 20,
+       
     },
     {
         name: "Mar",
         uv: 15,
-        pv: 12,
+        
     },
     {
         name: "Jul",
         uv: 40,
-        pv: 32,
+    
     },
     {
         name: "Aug",
         uv: 16,
-        pv: 23,
+       
+    },
+    {
+        name: "Oct",
+        uv: 20,
+       
+    },
+    {
+        name: "Mar",
+        uv: 15,
+        
+    },
+    {
+        name: "Jul",
+        uv: 40,
+    
+    },
+    {
+        name: "Aug",
+        uv: 16,
+       
     },
 ];
 
-type EarningChartProps = {};
+type EarningChartProps = {stat:any};
 
-const EarningChart = ({}: EarningChartProps) => (
-    <div className="w-[calc(50%-2rem)] mx-4 p-2 pt-8 bg-[#FFEBF6] rounded-3xl md:w-full md:mx-0 dark:bg-secondary">
+const EarningChart = ({stat}: EarningChartProps) => (
+    <div className=" mx-4 p-2 pt-8 bg-[#FFEBF6] rounded-3xl w-full md:mx-0 dark:bg-secondary">
         <div className="mb-8 px-6 text-h6">Earning</div>
         <div className="p-6 bg-white rounded-2xl dark:bg-dark-2">
             <div className="h-[11rem] -ml-8 -mr-1 dark:text-black">
@@ -42,7 +62,7 @@ const EarningChart = ({}: EarningChartProps) => (
                     <LineChart
                         width={500}
                         height={300}
-                        data={data}
+                        data={stat}
                         margin={{
                             top: 2,
                             right: 6,

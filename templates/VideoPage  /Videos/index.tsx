@@ -21,7 +21,7 @@ const Videos = ({id}: ProductsProps) => {
     const [searchText, setSearchText] = useState<any>('')
   const router =useRouter()
   const path =useParams()
-  console.log(path,"pathpathpathpathpathpathpathpath")
+
 
 
   
@@ -50,7 +50,7 @@ const Videos = ({id}: ProductsProps) => {
           refetchOnReconnect: false
         }
       )
-      console.log(videoData,"dsad")
+  
     return (
         <div className="relative mt-8 p-8 rounded-3xl bg-white card-shadow md:p-6 md:pt-8 dark:bg-dark-2">
             {/* <Sorting /> */}

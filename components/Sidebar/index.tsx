@@ -44,11 +44,11 @@ const Sidebar = ({ className, hideBanner, visible, onClick }: SidebarProps) => {
         //     icon: "chart",
         //     url: "/campaigns",
         // },
-        {
-            title: "Schedules",
-            icon: "compass",
-            url: "/schedules",
-        },
+        // {
+        //     title: "Schedules",
+        //     icon: "compass",
+        //     url: "/schedules",
+        // },
         // {
         //     title: "Payouts",
         //     icon: "wallet",

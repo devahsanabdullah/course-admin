@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { products } from "@/mocks/products";
 import {useAxios} from '@/components//services/http.service'
 import { useQuery } from 'react-query'
@@ -11,9 +11,7 @@ const Videos = ({id}: ProductsProps) => {
     const [checkboxes, setCheckboxes] = useState(products);
     const [currentPage, setCurrentPage] = useState(1)
     const [searchText, setSearchText] = useState<any>('')
-
-
-
+ 
   
     const {  get } = useAxios()
     const fetchData = async () => {

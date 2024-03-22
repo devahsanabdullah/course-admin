@@ -5,8 +5,6 @@ import {store} from '@/components/store/index'
 import { Provider } from "react-redux";
 import { QueryClient, QueryClientProvider } from 'react-query'
 import{ Auth} from '@/components/auth/Auth'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 const Providers = ({ children }: { children: React.ReactNode }) => {
     const queryClient = new QueryClient({
         defaultOptions: {
@@ -22,19 +20,6 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
     return (
         <Provider store={store()}>
           <Auth>
-          <ToastContainer
-position="top-right"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="light"
-
-/>
              <QueryClientProvider client={queryClient}>
             <CacheProvider>
                 <ColorModeScript
@@ -45,7 +30,6 @@ theme="light"
                 <ChakraProvider>{children}</ChakraProvider>
             </CacheProvider>
             </QueryClientProvider>
-            <ToastContainer />
             </Auth>
         </Provider>
     );

@@ -10,7 +10,6 @@ import Menu from "./Menu";
 import Profile from "./Profile";
 import Banner from "./Banner";
 import Settings from "./Settings";
-import Logout from "./Logout/Logout";
 
 type SidebarProps = {
     className?: string;
@@ -21,7 +20,6 @@ type SidebarProps = {
 
 const Sidebar = ({ className, hideBanner, visible, onClick }: SidebarProps) => {
     const [visibleModal, setVisibleModal] = useState<boolean>(false);
-    const [open, setOpen] = useState(false)
     const { colorMode } = useColorMode();
     const isDarkMode = colorMode === "dark";
 
@@ -29,7 +27,7 @@ const Sidebar = ({ className, hideBanner, visible, onClick }: SidebarProps) => {
         {
             title: "Overview",
             icon: "overview",
-            url: "/dashboard",
+            url: "/",
         },
         {
             title: "Users",
@@ -167,12 +165,11 @@ const Sidebar = ({ className, hideBanner, visible, onClick }: SidebarProps) => {
                 >
                     <ToggleTheme visible={visible} />
                     <button
-                    onClick={()=>setOpen(true)}
                         className={`ml-auto transition-opacity hover:opacity-80 ${
                             visible ? "xl:hidden lg:inline-block" : ""
                         }`}
                     >
-                        <Icon className="fill-red-500" name="logout" />
+                        <Icon className="fill-green" name="download" />
                     </button>
                 </div>
             </div>
@@ -180,13 +177,7 @@ const Sidebar = ({ className, hideBanner, visible, onClick }: SidebarProps) => {
                 visible={visibleModal}
                 onClose={() => setVisibleModal(false)}
             >
-                <Settings setVisibleModal={setVisibleModal}/>
-            </Modal>
-            <Modal
-                visible={open}
-                onClose={() => setOpen(false)}
-            >
-            <Logout setOpen={setOpen} open={open}/>
+                <Settings />
             </Modal>
         </>
     );
